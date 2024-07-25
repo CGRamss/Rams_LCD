@@ -1,0 +1,91 @@
+// Rams_LCD
+  Rams_LCD(uint8_t RS, uint8_t E, uint8_t D7, uint8_t D6, uint8_t D5, uint8_t D4, uint8_t D3 = -1, uint8_t D2 = -1, uint8_t D1 = -1, uint8_t D0 = -1);
+    // Description: Creates an LCD object with pin configuration.
+    // Note: RS, E, D7, D6, D5, and D4 are required pins. D3 to D0 are additional pins for 8-bit mode and are optional if using 4-bit mode.
+
+// initialize
+  void initialize(uint8_t Column, uint8_t Row, boolean ModeMPU = 0);
+    // Description: Initializes the LCD with its width and height, usually 16x2.
+    // Parameters:
+    //   Column: Number of columns on the LCD.
+    //   Row: Number of rows on the LCD.
+    //   ModeMPU: 0 for 4-bit mode (default), 1 for 8-bit mode.
+
+// sendData
+  void sendData(uint8_t RSvalue, uint8_t Data);
+    // Description: Sends data to the LCD (4-bit x 2 or 8-bit depending on the selected mode).
+
+// clearDisplay
+  void clearDisplay();
+    // Description: Clears the LCD display.
+
+// home
+  void home();
+    // Description: Sets the cursor to coordinate (0,0).
+
+// print
+  void print(const char* Text);
+    // Description: Prints text to the LCD.
+
+// println
+  void println(const char* Text, uint8_t Space = 1);
+    // Description: Prints text with additional space.
+    // Parameters:
+    //   Space: Number of spaces after the text (default 1).
+
+// printMode
+  void printMode(const char* Text, uint8_t MODE = 0, uint8_t Row = 0);
+    // Description: Prints text with positioning mode.
+    // Parameters:
+    //   MODE:
+    //     0: Text starts from the left.
+    //     1: Text starts from the center.
+    //     2: Text starts from the right.
+    //   Row: Row on the LCD (default 0).
+
+// write
+  void write(uint8_t Data);
+    // Description: Sends ASCII data to the LCD. For example, 0x48 sends "H".
+
+// setCursor
+  void setCursor(uint8_t Column, uint8_t Row);
+    // Description: Sets the cursor position on the LCD.
+
+// shiftRight
+  void shiftRight();
+    // Description: Shifts the entire display to the right.
+
+// shiftLeft
+  void shiftLeft();
+    // Description: Shifts the entire display to the left.
+
+// createChar
+  void createChar(uint8_t Location, uint8_t charmap[]);
+    // Description: Creates a custom character, up to 8 characters.
+    // Parameters:
+    //   Location: The location to store the custom character.
+    //   charmap[]: Array defining the custom character.
+
+// displayCustomChar
+  void displayCustomChar(uint8_t Location);
+    // Description: Displays the custom character that was created.
+
+// loopShiftRight
+  void loopShiftRight(const char* Text, boolean Row = 0, uint32_t Time = 50, uint8_t Loop = 1, uint8_t StartPosition = 0);
+    // Description: Loops the text to move to the right. When the text hits the far right edge, it reappears at the far left edge of the LCD.
+    // Parameters:
+    //   Row: Row on the LCD (default 0).
+    //   Time: Delay time in milliseconds (default 50).
+    //   Loop: Number of loops (default 1).
+    //   StartPosition: Initial position of the text (default 0).
+
+// loopShiftLeft
+  void loopShiftLeft(const char* Text, boolean Row = 0, uint32_t Delay = 50, uint8_t Loop = 1, uint8_t StartPosition = 0);
+    // Description: Loops the text to move to the left. When the text hits the far left edge, it reappears at the far right edge of the LCD.
+    // Parameters:
+    //   Row: Row on the LCD (default 0).
+    //   Delay: Delay time in milliseconds (default 50).
+    //   Loop: Number of loops (default 1).
+    //   StartPosition: Initial position of the text (default 0).
+
+*/
