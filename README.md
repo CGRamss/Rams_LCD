@@ -1,7 +1,7 @@
 # Rams_LCD
 This library is for Liquid Crystal Display 16x2 (ADM1602)
 
-25 Juli 2024
+25 July 2024
 
 This is a 16x2 LCD library for Arduino or standalone ATmega328. It may also be compatible with ESP microcontrollers, 
 though I have not had the opportunity to test it on other platforms due to time and budget constraints.
